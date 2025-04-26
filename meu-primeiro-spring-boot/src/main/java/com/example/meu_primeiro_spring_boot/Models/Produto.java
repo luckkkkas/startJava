@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "pudutos")
+@Table(name = "pudutos") // era para ser produtos
 public class Produto {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY )
@@ -20,11 +20,14 @@ public class Produto {
         this.preco = preco;
     }
 
+    public Produto() {
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
 
-    public String getNome(String nome){
+    public String getNome(){
         return nome;
     }
 
@@ -32,7 +35,7 @@ public class Produto {
         this.preco = preco;
     }
 
-    public Double setPreco(Double preco){
+    public Double getPreco(){
         return preco;
     }
 
